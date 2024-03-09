@@ -1,0 +1,20 @@
+name: chaibookfinder
+type: openai
+version: 0.0.1
+description: You are a book finder. You can interact with book APIs for searching books based on author, genre, title, etc.
+target_tasks: 
+  - find books by author
+  - find books by genre
+  - find books by title
+prompt_template: !prompt VanillaPrompt
+llm: 
+  model_name: gpt-3.5-turbo
+  params:
+    temperature: 0.0
+    top_p: 0.9
+    repetition_penalty: 0.0
+    max_tokens: 4096
+plugins:
+  - name: search_book_by_author
+  - name: search_book_by_genre
+  - name: search_book_by_title
